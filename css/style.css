@@ -1,0 +1,237 @@
+/* --------------------
+   GLOBAL
+-------------------- */
+body {
+  margin: 0;
+  background: linear-gradient(135deg, #12001f, #000);
+  font-family: 'Poppins', sans-serif;
+  color: #fff;
+  overflow-x: hidden;
+  cursor: none;
+}
+
+.hidden {
+  display: none;
+}
+
+/* --------------------
+   TEXT ALIGN HELPER
+-------------------- */
+.center-text {
+  text-align: center;
+}
+
+/* --------------------
+   WAND CURSOR
+-------------------- */
+.wand {
+  position: fixed;
+  width: 30px;
+  height: 30px;
+  pointer-events: none;
+  background: radial-gradient(circle, gold 30%, transparent 70%);
+  border-radius: 50%;
+  box-shadow: 0 0 15px gold;
+  z-index: 9999;
+}
+
+/* --------------------
+   LETTER SCREEN
+-------------------- */
+#letterScreen {
+  position: fixed;
+  inset: 0;
+  background: radial-gradient(circle, #2c003e, #000);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  z-index: 10;
+}
+
+.letter {
+  background: #f5e6c8;
+  color: #3b1d00;
+  width: 300px;
+  padding: 30px;
+  text-align: center;
+  border-radius: 10px;
+  box-shadow: 0 0 40px gold;
+  cursor: pointer;
+  animation: float 3s ease-in-out infinite;
+}
+
+@keyframes float {
+  0%, 100% { transform: translateY(0); }
+  50% { transform: translateY(-10px); }
+}
+
+/* --------------------
+   MAIN CONTAINER
+-------------------- */
+.container {
+  max-width: 900px;
+  margin: auto;
+  padding: 8vh 15px;
+}
+
+/* --------------------
+   HEADINGS
+-------------------- */
+h1 {
+  font-family: 'Cinzel', serif;
+  color: gold;
+  text-shadow: 0 0 25px gold;
+  font-size: 3em;
+}
+
+h2 {
+  margin-top: 5px;
+}
+
+/* --------------------
+   PROFILE PHOTO
+-------------------- */
+.photo-frame {
+  margin: 25px auto;
+  width: 250px;
+  height: 300px;
+  border-radius: 50%;
+  padding: 6px;
+  background: linear-gradient(45deg, gold, violet, cyan);
+ 
+  display: block;
+}
+
+@keyframes glow {
+  from { filter: hue-rotate(0deg); }
+  to { filter: hue-rotate(360deg); }
+}
+
+.photo-frame img {
+  display: block;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  border-radius: 50%;
+}
+
+/* --------------------
+   SLIDESHOW
+-------------------- */
+.slideshow {
+  max-width: 320px;
+  height: 420px;
+  margin: 30px auto;
+  position: relative;
+  border-radius: 20px;
+  overflow: hidden;
+  box-shadow: 0 0 30px gold;
+}
+
+.slideshow img {
+  position: absolute;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  opacity: 0;
+  transition: opacity 1.5s ease;
+}
+
+.slideshow img.active {
+  opacity: 1;
+}
+
+/* --------------------
+   CANDLE
+-------------------- */
+.candle-box {
+  margin: 40px auto;
+}
+
+.candle-box p {
+  margin: 120px;
+  text-align: center;
+}
+
+.candle {
+  width: 60px;
+  height: 120px;
+  background: #fff;
+  margin: 15px auto;
+  border-radius: 10px;
+  position: relative;
+  cursor: pointer;
+}
+
+.candle::before {
+  content: "";
+  position: absolute;
+  top: -15px;
+  left: 50%;
+  width: 4px;
+  height: 15px;
+  background: #333;
+  transform: translateX(-50%);
+}
+
+.flame {
+  width: 22px;
+  height: 30px;
+  background: radial-gradient(circle, #ffdd55 30%, #ff8800 70%);
+  position: absolute;
+  top: -45px;
+  left: 50%;
+  transform: translateX(-50%);
+  border-radius: 50%;
+  animation: flicker 0.15s infinite;
+}
+
+@keyframes flicker {
+  0%   { transform: translateX(-50%) scale(1); }
+  50%  { transform: translateX(-50%) scale(1.1); }
+  100% { transform: translateX(-50%) scale(1); }
+}
+
+/* --------------------
+   MESSAGE BOX
+-------------------- */
+.magic-box {
+  max-width: 600px;
+  margin: 30px auto;
+  padding: 30px;
+  border-radius: 20px;
+  background: rgba(0,0,0,0.6);
+  border: 2px solid gold;
+  text-align: center;
+}
+
+button {
+  background: gold;
+  border: none;
+  padding: 15px 35px;
+  border-radius: 40px;
+  font-size: 1.1em;
+  cursor: pointer;
+}
+
+.message {
+  margin-top: 20px;
+  line-height: 1.8;
+  color: #ffeaa7;
+}
+
+/* --------------------
+   QR SECTION
+-------------------- */
+.qr-box {
+  text-align: center;
+  margin-top: 30px;
+}
+
+.qr-box img {
+  width: 160px;
+  margin-top: 15px;
+  border-radius: 12px;
+  box-shadow: 0 0 20px gold;
+}
